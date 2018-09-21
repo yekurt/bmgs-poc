@@ -1,4 +1,4 @@
-package com.bmgs.telemetry;
+package com.bmgs.telemetry.data.entity;
 
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,5 +10,5 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class TelemetryData {
 
     private String id;
-    private String telemetrytype;
+    private String telemetryType;
 }
