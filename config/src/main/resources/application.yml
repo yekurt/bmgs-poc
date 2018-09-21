@@ -1,0 +1,18 @@
+eureka:
+    client:
+        region: default
+        registryFetchIntervalSeconds: 5
+        serviceUrl:
+            defaultZone: http://localhost:8082/eureka/
+server:
+    port: 8081
+spring:
+    application:
+        name: config
+    profiles:
+        active: native
+    cloud:
+        config:
+            server:
+                native:
+                    search-locations: classpath:/application-config
