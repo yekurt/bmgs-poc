@@ -1,9 +1,9 @@
-eureka:
-    client:
-        region: default
-        registryFetchIntervalSeconds: 5
-        serviceUrl:
-            defaultZone: http://localhost:8761/eureka/
+#eureka:
+#    client:
+#        region: default
+#        registryFetchIntervalSeconds: 5
+#        serviceUrl:
+#            defaultZone: http://localhost:8761/eureka/
 server:
     port: 8888
 spring:
@@ -16,3 +16,6 @@ spring:
             server:
                 native:
                     search-locations: classpath:/application-config
+        consul:
+            host: localhost
+            port: 8500

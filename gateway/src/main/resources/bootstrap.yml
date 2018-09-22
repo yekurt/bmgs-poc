@@ -1,9 +1,9 @@
-eureka:
-    client:
-        region: default
-        registryFetchIntervalSeconds: 5
-        serviceUrl:
-            defaultZone: http://localhost:8761/eureka/
+#eureka:
+#    client:
+#        region: default
+#        registryFetchIntervalSeconds: 5
+#        serviceUrl:
+#            defaultZone: http://localhost:8761/eureka/
 spring:
     cloud:
         config:
@@ -11,3 +11,6 @@ spring:
                 enabled: true
                 service-id: config
             name: gateway
+        consul:
+            host: localhost
+            port: 8500

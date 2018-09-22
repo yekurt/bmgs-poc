@@ -1,7 +1,7 @@
-eureka:
-    client:
-        serviceUrl:
-            defaultZone: http://localhost:8761/eureka/
+#eureka:
+#    client:
+#        serviceUrl:
+#            defaultZone: http://localhost:8761/eureka/
 spring:
     cloud:
         config:
@@ -9,3 +9,6 @@ spring:
                 enabled: true
                 service-id: config
             name: accountmanagement-service
+        consul:
+            host: localhost
+            port: 8500

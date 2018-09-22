@@ -21,7 +21,7 @@ import static org.springframework.web.reactive.function.server.ServerResponse.ok
 @RestController
 public class TelemetryController {
 
-
+    /*
     @Autowired
     private TelemetryDataConverter c;
 
@@ -44,4 +44,5 @@ public class TelemetryController {
                         );
 
     }
+    */
 }

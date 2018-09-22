@@ -14,10 +14,7 @@ public class AccountController {
 
     @Bean
     RouterFunction<?> routes() {
-        return
-                route(GET("/accounts"), r -> ok().body(Flux.just("a", "b"), String.class))
-
-                ;
-
+        return route(GET("/accounts"), r -> ok().body(Flux.just("a", "b"), String.class));
     }
+
 }
