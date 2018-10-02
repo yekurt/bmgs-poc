@@ -1,11 +1,39 @@
+logging:
+  level:
+    ROOT: DEBUG
+
 eureka:
-    client:
-        serviceUrl:
-            defaultZone: http://localhost:8761/eureka/
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 spring:
-    cloud:
-        config:
-            discovery:
-                enabled: true
-                service-id: config
-            name: telemetry-service
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      name: telemetry-service
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: login-app
+            client-secret: login-app
+            clientName: login-app
+            authorization-grant-type: authorization_code
+            redirectUriTemplate: '{baseUrl}/login/oauth2/code/{registrationId}'
+            scope:
+            - openid
+            - profile
+            - email
+
+        provider:
+          keycloak:
+            authorization-uri: https://keycloak-keycloak.a3c1.starter-us-west-1.openshiftapps.com/auth/realms/bmgs-poc/protocol/openid-connect/auth
+            token-uri: https://keycloak-keycloak.a3c1.starter-us-west-1.openshiftapps.com/auth/realms/bmgs-poc/protocol/openid-connect/token
+            user-info-uri: https://keycloak-keycloak.a3c1.starter-us-west-1.openshiftapps.com/auth/realms/bmgs-poc/protocol/openid-connect/userinfo
+            jwk-set-uri: https://keycloak-keycloak.a3c1.starter-us-west-1.openshiftapps.com/auth/realms/bmgs-poc/protocol/openid-connect/certs
+            user-name-attribute: preferred_username
